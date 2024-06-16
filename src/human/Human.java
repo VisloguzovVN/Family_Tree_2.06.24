@@ -1,3 +1,5 @@
+package human;
+
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.Period;
@@ -203,6 +205,6 @@ public class Human implements Serializable {
 
 
 //Поля: Имя, Отец, Мать
-// List<Human> children
+// List<Human.Human> children
 //LocalDate birthDate, deathDate
-//Gender gender;
+//Human.Gender gender;

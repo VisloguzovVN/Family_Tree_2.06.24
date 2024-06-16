@@ -1,3 +1,9 @@
+import family_tree.Family_Tree;
+import human.Gender;
+import human.Human;
+import writer.FileHandler;
+import writer.Writable;
+
 import java.time.LocalDate;
 
 import static java.time.LocalDate.of;
@@ -10,19 +16,20 @@ public class Main {
         String filePath = "src/tree.txt";
 
         Family_Tree tree = read(filePath);
-        //Family_Tree tree = testTree();
+        //Family_Tree.Family_Tree tree = testTree();
         System.out.println(tree);
 
         save(tree, filePath);
     }
 
     static Family_Tree read(String filePath) {
-        FailHandler failHandler = new FailHandler();
-        return (Family_Tree) failHandler.read(filePath);
+        FileHandler failHandler = new FileHandler();
+        Family_Tree read = (Family_Tree) failHandler.read(filePath);
+        return read;
     }
 
     static void save(Family_Tree familyTree, String filePath) {
-        FailHandler failHandler = new FailHandler();
+        FileHandler failHandler = new FileHandler();
         failHandler.save(familyTree, filePath);
     }
 
@@ -48,7 +55,7 @@ public class Main {
 
         System.out.println(tree);
 
-        Writable writable = new FailHandler();
+        Writable writable = new FileHandler();
 
 
         return tree;
