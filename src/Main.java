@@ -1,8 +1,10 @@
-import family_tree.Family_Tree;
-import human.Gender;
-import human.Human;
-import writer.FileHandler;
-import writer.Writable;
+import model.family_tree.Family_Tree;
+import model.family_tree.human.Gender;
+import model.family_tree.human.Human;
+import model.family_tree.writer.FileHandler;
+import model.family_tree.writer.Writable;
+import view.ConsoleUI;
+import view.View;
 
 import java.time.LocalDate;
 
@@ -12,6 +14,9 @@ import static java.time.LocalDate.of;
 public class Main {
 
     public static void main(String[] args) {
+
+        View view = new ConsoleUI<>();
+        view.start();
 
         String filePath = "src/tree.txt";
 
@@ -60,6 +65,7 @@ public class Main {
 
         return tree;
     }
+
 }
 
 //Создал древо

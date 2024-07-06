@@ -1,4 +1,4 @@
-package human;
+package model.family_tree.human;
 
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -18,17 +18,18 @@ public class Human implements Serializable {
     private List<Human> children;
     private Human spouse;
 
-    public Human(String name, Gender gender, LocalDate birthDate, LocalDate deathDate,
-                 Human father, Human mother){
+    public Human(){
         id = -1;
         this.name = name;
         this.gender = gender;
         this.birthDate = birthDate;
         this.deathDate = deathDate;
         parents = new ArrayList<>();
+        Human father = null;
         if(father != null){
             parents.add(father);
         }
+        Human mother = null;
         if(mother !=null){
             parents.add(mother);
         }
@@ -36,18 +37,23 @@ public class Human implements Serializable {
     }
 
     public Human(String name, Gender gender, LocalDate birthDate){
-        this(name, gender, birthDate, null, null, null);
+        this();
     }
 
     public Human(String name, Gender gender, LocalDate birthDate, Human mother, Human father){
-        this(name, gender, birthDate, null, father, mother);
+        this();
     }
 
-    public boolean addChild(Human child){
-        if(!children.contains(child)){
-            children.add(child);
-            return true;
-        }
+    public static void addHuman(String name, int age) {
+    }
+
+    public static String getHumanListInfo() {
+
+        return null;
+    }
+
+
+    public boolean addChild(Human child) {
         return false;
     }
 
